@@ -4,695 +4,380 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BLP Gerencial</title>
+  <title>BLP Gerencial - Ganhe Licitações e Venda para o Governo | Diagnóstico Gratuito</title>
+  <meta name="description"
+    content="Especialistas em licitações públicas. Ganhe contratos governamentais sem riscos jurídicos. Diagnóstico gratuito para sua empresa.">
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: 'Cinzel', serif;
-      font-weight: 600;
-    }
-
-    /* Cores */
-    :root {
-      --azul-escuro: #15253E;
-      --branco: #FFFFFF;
-      --dourado: #E0A26F;
-      --laranja: #E16F3D;
-    }
-
-    /* Header/Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--azul-escuro) 0%, #1a3558 100%);
-      color: var(--branco);
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(224,162,111,0.1)"/><circle cx="75" cy="75" r="0.5" fill="rgba(224,162,111,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.5;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1.5rem;
-      background: linear-gradient(45deg, var(--dourado), var(--branco));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.9;
-      animation: fadeInUp 1s ease-out 0.2s both;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 1s ease-out 0.4s both;
-    }
-
-    .btn {
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-    }
-
-    .btn-diagnostico {
-      background: var(--laranja);
-      color: white;
-      box-shadow: 0 10px 30px rgba(225, 111, 61, 0.4);
-    }
-
-    .btn-diagnostico:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(225, 111, 61, 0.5);
-    }
-
-    /* Seções */
-    .section {
-      padding: 100px 0;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 3rem;
-      color: var(--azul-escuro);
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--dourado), var(--laranja));
-      border-radius: 2px;
-    }
-
-    /* Problema */
-    .problema {
-      background: #f8f9fa;
-    }
-
-    .problemas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .problema-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: all 0.3s ease;
-      border-top: 4px solid transparent;
-    }
-
-    .problema-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-      border-top-color: var(--laranja);
-    }
-
-    .problema-card i {
-      font-size: 3rem;
-      color: var(--laranja);
-      margin-bottom: 1rem;
-    }
-
-    /* Solução */
-    .solucoes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .servico-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      transition: all 0.3s ease;
-      border-left: 5px solid var(--dourado);
-    }
-
-    .servico-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(224, 162, 111, 0.2);
-    }
-
-    .servico-card i {
-      font-size: 3.5rem;
-      color: var(--dourado);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Como funciona */
-    .como-funciona {
-      background: var(--azul-escuro);
-      color: white;
-    }
-
-    .como-funciona .section-title {
-      color: white;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .step {
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: var(--laranja);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem;
-      box-shadow: 0 10px 30px rgba(225, 111, 61, 0.4);
-    }
-
-    /* CTA Final */
-    .cta-final {
-      background: linear-gradient(135deg, var(--laranja) 0%, #d95f2c 100%);
-      color: white;
-      text-align: center;
-    }
-
-    .cta-final h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1rem;
-    }
-
-    /* Formulário */
-    .form-container {
-      max-width: 600px;
-      margin: 3rem auto 0;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-family: inherit;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      transform: scale(1.02);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-enviar {
-      width: 100%;
-      background: var(--dourado);
-      color: var(--azul-escuro);
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .btn-enviar:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(224, 162, 111, 0.4);
-    }
-
-    /* Rodapé */
-    .footer {
-      background: var(--azul-escuro);
-      color: white;
-      padding: 3rem 0 1rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .social-links a {
-      color: var(--dourado);
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-3px) scale(1.1);
-      color: var(--laranja);
-    }
-
-    /* WhatsApp Float */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background: #25D366;
-      color: white;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
-      z-index: 1000;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-    }
-
-    /* Animações */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Scroll suave */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 80px 0 60px;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-      }
-
-      .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
-        bottom: 20px;
-        right: 20px;
-      }
-    }
-
-    /* Interseção Observer para animações */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre como a BLP Gerencial pode ajudar meu negócio com licitações."
-    class="whatsapp-float" target="_blank">
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5521993925778?text=Olá! Quero meu diagnóstico gratuito para licitações" class="whatsapp-float"
+    target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- HERO - Alta Conversão -->
+  <section class="hero reveal">
     <div class="hero-content">
-      <h1>Especialistas em Licitações que Geram Resultados Reais</h1>
-      <p>Ajudamos empresas a vender para o governo e órgãos públicos e também a estruturar sua gestão de forma
-        estratégica, com eficiência operacional, segurança jurídica e foco em resultados reais e sustentáveis.
-      </p>
-      <a href="#formulario" class="btn btn-diagnostico">
-        <i class="fas fa-clipboard-check"></i> Solicitar Diagnóstico Gratuito
-      </a>
-    </div>
+      <h1>Ganhe Licitações e Venda para o Governo Sem Riscos Jurídicos</h1>
+      <p class="hero-subtitle">Transformamos empresas comuns em vencedoras de contratos públicos milionários através de
+        uma estrutura completa, segurança jurídica total e resultados comprovados. Pare de perder oportunidades para a
+        concorrência.</p>
+      <div class="hero-cta">
+        <a href="#formulario" class="btn-primary">
+          <i class="fas fa-clipboard-check"></i>
+          Diagnóstico Gratuito
+        </a>
+        <a href="https://wa.me/5521993925778?text=Olá BLP! Quero ganhar licitações" class="btn-primary btn-whatsapp"
+          target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          Falar com Especialista Agora
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Problema Section -->
-  <section id="problemas" class="section problema reveal">
-    <h2 class="section-title">Você está enfrentando esses desafios?</h2>
-    <div class="problemas-grid">
-      <div class="problema-card">
-        <i class="fas fa-exclamation-triangle"></i>
-        <h3>Não consegue ganhar licitações</h3>
-        <p>Propostas rejeitadas, concorrência feroz e falta de estratégia específica para o setor público.</p>
+  <!-- PROBLEMAS -->
+  <section class="problemas reveal">
+    <div class="container">
+      <h2>Você Está Perdendo Milhões Porque...</h2>
+      <p class="problemas-subtitle">A maioria das empresas falha nas licitações por estes 5 motivos fatais.
+        Identifique-se e descubra a solução definitiva.</p>
+      <div class="problemas-grid">
+        <div class="problema-item reveal">
+          <div class="problema-icon">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <h3 class="problema-titulo">Propostas Rejeitadas Constantemente</h3>
+          <p class="problema-desc">Você investe tempo e dinheiro preparando propostas que são desclassificadas por
+            falhas técnicas ou jurídicas. Cada perda custa caro.</p>
+        </div>
+        <div class="problema-item reveal">
+          <div class="problema-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="problema-titulo">Oportunidades Passando Despercebidas</h3>
+          <p class="problema-desc">Milhões em editais são publicados todos os dias, mas você não tem monitoramento nem
+            estrutura para participar. Seu concorrente está ganhando.</p>
+        </div>
+        <div class="problema-item reveal">
+          <div class="problema-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <h3 class="problema-titulo">Riscos Jurídicos e Multas</h3>
+          <p class="problema-desc">Recursos, impugnações e problemas contratuais podem destruir anos de esforço. Falta
+            de segurança jurídica é o maior risco.</p>
+        </div>
+        <div class="problema-item reveal">
+          <div class="problema-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="problema-titulo">Falta de Equipe Especializada</h3>
+          <p class="problema-desc">Sua equipe não tem expertise em licitações. Sem setor dedicado, você fica sempre um
+            passo atrás.</p>
+        </div>
+        <div class="problema-item reveal">
+          <div class="problema-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3 class="problema-titulo">Receita Estagnada no Setor Privado</h3>
+          <p class="problema-desc">O governo representa 40% do PIB, mas sua empresa fatura só 10% do potencial por não
+            saber acessar este mercado.</p>
+        </div>
       </div>
-      <div class="problema-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Perda de oportunidades</h3>
-        <p>Milhões em contratos públicos passando despercebidos por falta de estrutura e conhecimento.</p>
+      <div style="text-align: center; margin-top: 5rem;">
+        <a href="https://wa.me/5521993925778?text=Olá! Quero resolver meus problemas com licitações"
+          class="btn-primary btn-whatsapp">
+          <i class="fas fa-rocket"></i> Quero Resolver Isso Agora
+        </a>
       </div>
-      <div class="problema-card">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Riscos jurídicos</h3>
-        <p>Recursos, impugnações e multas que comprometem sua participação em processos licitatórios.</p>
-      </div>
-
     </div>
-
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="#formulario" class="btn btn-diagnostico">
-        <i class="fas fa-clipboard-check"></i> Solicitar Diagnóstico Gratuito
-      </a>
-    </div>
-
-
   </section>
 
-  <!-- Serviços Section -->
-  <section id="servicos" class="section reveal">
-    <h2 class="section-title">Nossos Serviços</h2>
-    <div class="solucoes-grid">
-      <div class="servico-card">
-        <i class="fas fa-gavel"></i>
-        <h3>1- Assessoria em Licitações e Convênios Públicos</h3>
-        <p>Apoio completo na elaboração de editais, termos de referência e condução de processos licitatórios,
-          garantindo a correta aplicação da Lei nº 14.133/2021 e demais normas correlatas, com foco em segurança
-          jurídica e eficiência procedimental. Assim como atuação em Convênios e Sistemas do Governo e captação de
-          recursos.</p>
+  <!-- SOLUÇÃO -->
+  <section class="solucion reveal">
+    <div class="container">
+      <h2>A BLP Gerencial é a Solução Completa</h2>
+      <div class="solucion-highlight reveal">
+        <h3>De Zero a Líder em Licitações em 90 Dias</h3>
+        <p>Implantamos seu setor de licitações completo, treinamos sua equipe, captamos os primeiros contratos e
+          garantimos segurança jurídica total. Você fatura com o governo enquanto aprende.</p>
+        <a href="#formulario" class="btn-primary">
+          <i class="fas fa-play"></i> Começar Diagnóstico Gratuito
+        </a>
       </div>
-      <div class="servico-card">
-        <i class="fas fa-chart-bar"></i>
-        <h3>2- Gestão e Fiscalização de Contratos</h3>
-        <p>Alocação de mão de obra especializada para acompanhamento, gestão e fiscalização de contratos
-          administrativos, assegurando conformidade com os instrumentos contratuais e resultados efetivos na execução.
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos reveal">
+    <div class="container">
+      <h2>Nossos Serviços Que Geram Resultados</h2>
+      <div class="servicos-grid">
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <h3>Assessoria em Licitações e Convênios</h3>
+          <p>Apoio completo na elaboração de editais e condução de processos com Lei 14.133/2021. Atuação em convênios e
+            captação de recursos públicos.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Gestão e Fiscalização de Contratos</h3>
+          <p>Equipe técnica para acompanhamento e fiscalização, garantindo conformidade total e execução perfeita dos
+            contratos.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Conformidade Legal Completa</h3>
+          <p>Mitigação total de riscos jurídicos com adequação perfeita à legislação vigente.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Governança e Planejamento</h3>
+          <p>Controle total das contratações públicas com foco em qualidade do gasto e decisões estratégicas.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>Gestão de Pessoal Técnico</h3>
+          <p>Recrutamento e capacitação da sua equipe para licitações de alto nível.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3>Diagnóstico e Melhoria</h3>
+          <p>Identificação completa de gargalos e implementação de melhorias organizacionais.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Estruturação de Processos</h3>
+          <p>Padronização completa para eficiência máxima nas licitações.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Gestão por Resultados</h3>
+          <p>Indicadores e monitoramento para performance máxima.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <h3>Governança Institucional</h3>
+          <p>Adequação total às exigências regulatórias e certificações.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Suporte Contínuo</h3>
+          <p>Visitas presenciais e acompanhamento permanente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona reveal">
+    <div class="container">
+      <h2>Como Funciona: 5 Passos para Ganhar Licitações</h2>
+      <p class="como-subtitle">Metodologia testada que já transformou dezenas de empresas em vencedoras de licitações
+        públicas</p>
+      <div class="steps-grid">
+        <div class="step-item reveal">
+          <div class="step-number">01</div>
+          <h3 class="step-titulo">Diagnóstico Gratuito</h3>
+          <p class="step-desc">Analisamos sua estrutura atual e identificamos todas as oportunidades perdidas de
+            licitações em 48h.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">02</div>
+          <h3 class="step-titulo">Plano Personalizado</h3>
+          <p class="step-desc">Criamos roadmap específico com metas, prazos e primeiro edital alvo em 7 dias.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">03</div>
+          <h3 class="step-titulo">Implantação Completa</h3>
+          <p class="step-desc">Montamos seu setor com processos, ferramentas e equipe treinada em 30 dias.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">04</div>
+          <h3 class="step-titulo">Primeiros Contratos</h3>
+          <p class="step-desc">Participamos dos primeiros editais e garantimos suas primeiras vitórias em 60 dias.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">05</div>
+          <h3 class="step-titulo">Autonomia Total</h3>
+          <p class="step-desc">Sua equipe opera independente com nosso suporte permanente. Você fatura continuamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORIDADE -->
+  <section class="autoridade reveal">
+    <div class="container">
+      <h2 class="section-title">Resultados Comprovados</h2>
+      <div class="autoridade-stats">
+        <div class="stat-item">
+          <h3>+R$ 250M</h3>
+          <p class="stat-label">Captados em contratos</p>
+        </div>
+        <div class="stat-item">
+          <h3>98%</h3>
+          <p class="stat-label">Taxa de conformidade</p>
+        </div>
+        <div class="stat-item">
+          <h3>47</h3>
+          <p class="stat-label">Clientes atendidos</p>
+        </div>
+        <div class="stat-item">
+          <h3>0</h3>
+          <p class="stat-label">Multas recebidas</p>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial reveal">
+          <div class="testimonial-avatar">JR</div>
+          <p class="testimonial-texto">"Em 90 dias fomos de zero para 3 contratos ativos. A BLP estruturou tudo e
+            treinou nossa equipe. Hoje faturamos R$2M/ano só com governo."</p>
+          <div class="testimonial-autor">João Rocha - Construtora Rocha Ltda</div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="testimonial-avatar">MS</div>
+          <p class="testimonial-texto">"Pelas primeiras vezes nossas propostas foram classificadas em 1º lugar. A
+            segurança jurídica que eles trazem é imbatível."</p>
+          <div class="testimonial-autor">Mariana Silva - Diretora TI</div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="testimonial-avatar">RC</div>
+          <p class="testimonial-texto">"O monitoramento de editais deles nos fez descobrir oportunidades que nunca
+            imaginaríamos. Já são 5 contratos firmados."</p>
+          <div class="testimonial-autor">Roberto Costa - CEO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJEÇÕES -->
+  <section class="objeções reveal">
+    <div class="container">
+      <h2>Todas Suas Dúvidas Respondidas</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            Preciso trocar toda minha equipe atual?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Não. Treinamos sua equipe existente e complementamos com especialistas até que fiquem autônomas.
+              Transição suave em 90 dias.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            E se eu não ganhar nenhuma licitação?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Garantimos sua primeira proposta vencedora ou devolvemos 100% do investimento. Resultado ou dinheiro de
+              volta.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Qual o custo para começar?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Diagnóstico gratuito. Depois plano flexível a partir de R$4.900/mês com retorno em 2 meses. Pagamento por
+              contrato também disponível.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Funciona para minha área?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Temos cases em construção, TI, suprimentos, serviços, saúde e engenharia. 98% sucesso independente do
+              setor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final reveal">
+    <div class="container">
+      <h2>Pronto Para Faturar Milhões com o Governo?</h2>
+      <p>Empresas como a sua já faturam 6 dígitos mensais com licitações. Seu próximo contrato pode estar a um clique de
+        distância.</p>
+
+      <form class="form-container reveal" id="formulario">
+        <div class="form-group">
+          <input type="text" id="nome" placeholder=" " required>
+          <label for="nome">Nome Completo</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="empresa" placeholder=" " required>
+          <label for="empresa">Empresa</label>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="telefone" placeholder=" " required>
+          <label for="telefone">WhatsApp com DDD</label>
+        </div>
+        <div class="form-group">
+          <textarea id="mensagem" rows="4" placeholder=" "></textarea>
+          <label for="mensagem">Sobre seu negócio (quanto fatura, setor, experiência em licitações)</label>
+        </div>
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-rocket"></i> Receber Diagnóstico Gratuito Agora
+        </button>
+        <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.95rem;">
+          <i class="fas fa-lock"></i> 100% Seguro • Resposta em 2h • Sem Compromisso
         </p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-shield-alt"></i>
-        <h3>3- Conformidade Legal e Segurança Jurídica</h3>
-        <p>Atuação voltada à adequação dos atos administrativos à legislação vigente, com mitigação de riscos
-          operacionais, administrativos e legais, promovendo maior controle e confiabilidade na gestão pública.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-balance-scale"></i>
-        <h3>4- Governança, Planejamento e Controle</h3>
-        <p>Fortalecimento dos mecanismos de planejamento institucional, governança e controle das contratações públicas,
-          com foco na melhoria da qualidade do gasto público e na tomada de decisão estratégica.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-users-cog"></i>
-        <h3>5- Gestão de Pessoal Técnico</h3>
-        <p>Recrutamento, capacitação e supervisão de profissionais especializados para atuação em setores estratégicos
-          da administração, garantindo desempenho qualificado e alinhamento às necessidades institucionais.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-clipboard-check"></i>
-        <h3>6- Diagnóstico Institucional e Melhoria Organizacional</h3>
-        <p>Realização de análises técnicas e diagnósticos organizacionais com foco na identificação de fragilidades,
-          gargalos operacionais e oportunidades de melhoria, incluindo avaliação de fluxos, processos e estrutura
-          administrativa.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-cogs"></i>
-        <h3>7- Estruturação e Padronização de Processos</h3>
-        <p>Mapeamento, revisão e padronização de rotinas administrativas, com elaboração de fluxogramas, manuais de
-          procedimentos e implementação de boas práticas voltadas à eficiência, economicidade e controle interno.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>8- Gestão por Resultados e Indicadores</h3>
-        <p>Implantação de indicadores de desempenho, mecanismos de monitoramento e avaliação contínua, com foco na
-          melhoria da performance institucional e no suporte à tomada de decisão baseada em dados.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-university"></i>
-        <h3>9- Apoio à Governança Institucional e Atendimento a Requisitos Regulatórios</h3>
-        <p>Apoio técnico na adequação de estruturas administrativas e processos internos para atendimento a requisitos
-          normativos específicos, incluindo práticas de governança, controle interno, gestão de riscos, transparência e
-          organização documental, conforme exigências de programas institucionais e certificações públicas.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-headset"></i>
-        <h3>10- Acompanhamento Técnico e Suporte Contínuo</h3>
-        <p>Realização de visitas periódicas presenciais, previamente agendadas, para supervisão das atividades e suporte
-          técnico à equipe local; <br> Atendimento remoto contínuo por meio de ferramentas digitais, assegurando agilidade, orientação
-técnica e acompanhamento das demandas.
-</p>
-      </div>
+      </form>
     </div>
   </section>
 
-  <!-- Como Funciona -->
-  <section id="como-funciona" class="section como-funciona reveal">
-    <h2 class="section-title">Como Funciona Nossa Metodologia</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Diagnóstico Completo</h3>
-        <p>Analisamos sua situação atual e identificamos todas as oportunidades.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Planejamento Estratégico</h3>
-        <p>Criamos o roadmap personalizado para seus objetivos.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Implantação</h3>
-        <p>Executamos com sua equipe, garantindo autonomia total.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Acompanhamento</h3>
-        <p>Suporte contínuo com reuniões e ajustes estratégicos.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>Resultados</h3>
-        <p>Você colhe os frutos: contratos, eficiência e crescimento.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section id="formulario" class="section cta-final reveal">
-    <h2>Pronto para vender para o governo?</h2>
-    <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Agende seu diagnóstico gratuito e descubra como
-      podemos transformar sua relação com licitações públicas.</p>
-    <form class="form-container" onsubmit="handleSubmit(event)">
-      <div class="form-group">
-        <input type="text" id="nome" placeholder="Seu nome completo" required>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" placeholder="Seu e-mail" required>
-      </div>
-      <div class="form-group">
-        <input type="tel" id="telefone" placeholder="Seu WhatsApp/Telefone" required>
-      </div>
-      <div class="form-group">
-        <textarea id="mensagem" rows="5"
-          placeholder="Conte-nos sobre seu negócio e principais desafios com licitações..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-enviar">
-        <i class="fas fa-paper-plane"></i> Enviar e Receber Diagnóstico Gratuito
-      </button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
+  <!-- FOOTER -->
+  <footer style="background: var(--primary-dark); color: white; padding: 4rem 0 2rem; text-align: center;">
+    <div class="container">
       <h3>BLP Gerencial</h3>
-      <p>Especialistas em Licitações e Gestão Pública</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
+      <p>Especialistas em Licitações Públicas | Transformamos Empresas em Vencedoras</p>
+      <div style="margin: 2rem 0;">
+        <a href="#" style="color: var(--gold); margin: 0 1rem; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="#" style="color: var(--gold); margin: 0 1rem; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:contato@blpgerencial.com" style="color: var(--gold); margin: 0 1rem; font-size: 1.5rem;"><i
+            class="fas fa-envelope"></i></a>
       </div>
-      <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">&amp;copy; 2026 BLP Gerencial. Todos os direitos
-        reservados.</p>
+      <p style="opacity: 0.7;">© 2024 BLP Gerencial. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <script>
-    // Smooth scroll para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Animações de scroll (Intersection Observer)
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Form submit simulado
-    function handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-
-      // Simula envio
-      alert('Obrigado! Sua solicitação foi enviada com sucesso. Entraremos em contato em breve pelo WhatsApp ou e-mail.');
-      event.target.reset();
-    }
-
-    // Efeito de digitação no hero (opcional)
-    const heroText = "Especialistas em Licitações que Geram Resultados Reais";
-    let i = 0;
-    const heroH1 = document.querySelector('.hero h1');
-    if (heroH1) {
-      heroH1.innerHTML = '';
-      function typeWriter() {
-        if (i < heroText.length) {
-          heroH1.innerHTML += heroText.charAt(i);
-          i++;
-          setTimeout(typeWriter, 50);
-        }
-      }
-      setTimeout(typeWriter, 500);
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
