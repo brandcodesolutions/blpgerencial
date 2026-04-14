@@ -15,6 +15,30 @@
 </head>
 
 <body>
+  <!-- Menu Hambúrguer -->
+  <button class="hamburger-btn" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu Lateral -->
+  <div class="menu-lateral" id="menuLateral">
+    <a href="#hero" class="menu-link">Início</a>
+    <a href="#problemas" class="menu-link">Problemas</a>
+    <a href="#solucao" class="menu-link">Solução</a>
+    <a href="#servicos" class="menu-link">Serviços</a>
+    <a href="#como-funciona" class="menu-link">Como Funciona</a>
+    <a href="#resultados" class="menu-link">Resultados</a>
+    <a href="#formulario" class="menu-link">Contato</a>
+    <a href="https://wa.me/5521993925778?text=Olá! Quero meu diagnóstico gratuito para licitações" class="menu-link menu-whatsapp" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+
+  <!-- Overlay (para fechar menu ao clicar fora) -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <!-- WhatsApp Float -->
   <a href="https://wa.me/5521993925778?text=Olá! Quero meu diagnóstico gratuito para licitações" class="whatsapp-float"
     target="_blank">
@@ -22,8 +46,11 @@
   </a>
 
   <!-- HERO - Alta Conversão -->
-  <section class="hero reveal">
+  <section class="hero reveal" id="hero">
     <div class="hero-content">
+      <div class="hero-logo">
+        <img src="images/logoblp.png" alt="Logo BLP Gerencial" class="logo-img">
+      </div>
       <h1>Ganhe Licitações e Venda para o Governo Sem Riscos Jurídicos</h1>
       <p class="hero-subtitle">Transformamos empresas comuns em vencedoras de contratos públicos milionários através de
         uma estrutura completa, segurança jurídica total e resultados comprovados. Pare de perder oportunidades para a
@@ -43,7 +70,7 @@
   </section>
 
   <!-- PROBLEMAS -->
-  <section class="problemas reveal">
+  <section class="problemas reveal" id="problemas">
     <div class="container">
       <h2>Você Está Perdendo Milhões Porque...</h2>
       <p class="problemas-subtitle">A maioria das empresas falha nas licitações por estes 5 motivos fatais.
@@ -100,7 +127,7 @@
   </section>
 
   <!-- SOLUÇÃO -->
-  <section class="solucion reveal">
+  <section class="solucion reveal" id="solucao">
     <div class="container">
       <h2>A BLP Gerencial é a Solução Completa</h2>
       <div class="solucion-highlight reveal">
@@ -115,7 +142,7 @@
   </section>
 
   <!-- SERVIÇOS -->
-  <section class="servicos reveal">
+  <section class="servicos reveal" id="servicos">
     <div class="container">
       <h2>Nossos Serviços Que Geram Resultados</h2>
       <div class="servicos-grid">
@@ -196,7 +223,7 @@
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section class="como-funciona reveal">
+  <section class="como-funciona reveal" id="como-funciona">
     <div class="container">
       <h2>Como Funciona: 5 Passos para Ganhar Licitações</h2>
       <p class="como-subtitle">Metodologia testada que já transformou dezenas de empresas em vencedoras de licitações
@@ -234,9 +261,9 @@
   </section>
 
   <!-- AUTORIDADE -->
-  <section class="autoridade reveal">
+  <section class="autoridade reveal" id="resultados">
     <div class="container">
-      <h2 class="section-title">Resultados Comprovados</h2>
+      <h2>Resultados Comprovados</h2>
       <div class="autoridade-stats">
         <div class="stat-item">
           <h3>+R$ 250M</h3>
@@ -373,7 +400,7 @@
         <a href="mailto:contato@blpgerencial.com" style="color: var(--gold); margin: 0 1rem; font-size: 1.5rem;"><i
             class="fas fa-envelope"></i></a>
       </div>
-      <p style="opacity: 0.7;">© 2024 BLP Gerencial. Todos os direitos reservados.</p>
+      <p style="opacity: 0.7;">© 2026 BLP Gerencial. Todos os direitos reservados.</p>
     </div>
   </footer>
 

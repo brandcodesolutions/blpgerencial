@@ -113,3 +113,41 @@ document.addEventListener('click', function (e) {
     });
   }
 });
+
+// Menu Hambúrguer - Funcionalidade
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const menuLateral = document.getElementById('menuLateral');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+// Abrir/Fechar Menu
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('active');
+  menuLateral.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+});
+
+// Fechar Menu ao Clicar em Link
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('active');
+    menuLateral.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  });
+});
+
+// Fechar Menu ao Clicar no Overlay
+menuOverlay.addEventListener('click', () => {
+  hamburgerBtn.classList.remove('active');
+  menuLateral.classList.remove('active');
+  menuOverlay.classList.remove('active');
+});
+
+// Fechar Menu ao Redimensionar a Janela
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && menuLateral.classList.contains('active')) {
+    hamburgerBtn.classList.remove('active');
+    menuLateral.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  }
+});
