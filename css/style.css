@@ -50,9 +50,9 @@ h3 {
 }
 
 .navbar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0 20px 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,9 +70,9 @@ h3 {
 }
 
 .navbar-logo-img {
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
-  max-height: 50px;
+  max-height: 40px;
 }
 
 /* HERO SECTION - Alta Conversão */
@@ -983,6 +983,47 @@ h3 {
   transform: translateY(0);
 }
 
+/* RESPONSIVO - TABLET */
+@media (max-width: 1070px) and (min-width: 769px) {
+  .hero {
+    padding: 120px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-wrapper {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0 20px;
+    flex: 1;
+    margin: 0;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-mobile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 0;
+    order: 2;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-mobile-img {
+    max-height: 300px;
+  }
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero {
@@ -1042,6 +1083,21 @@ h3 {
 
   .form-container {
     padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-dark);
+  }
+
+  .btn-submit {
+    background: var(--primary-dark);
+    color: var(--white);
   }
 
   .servicos-grid {
