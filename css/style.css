@@ -359,14 +359,16 @@ h3 {
 }
 
 .solucion-highlight p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .solucion-highlight a {
   display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
 }
 
 /* SERVIÇOS EXPANDIDOS */
@@ -922,7 +924,7 @@ h3 {
 /* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: 30px;
   width: 70px;
   height: 70px;
