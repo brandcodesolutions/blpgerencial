@@ -569,10 +569,10 @@ h3 {
 }
 
 .testimonials {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
