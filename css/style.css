@@ -774,6 +774,17 @@ h3 {
   pointer-events: none;
 }
 
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+  top: -0.8rem;
+  font-size: 0.85rem;
+  color: var(--orange);
+  background: white;
+  padding: 0 0.3rem;
+}
+
 .btn-submit {
   width: 100%;
   background: var(--primary-dark);

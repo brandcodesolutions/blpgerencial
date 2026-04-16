@@ -48,11 +48,7 @@ document.querySelector('form')?.addEventListener('submit', function (e) {
   const mensagem = document.getElementById('mensagem').value || 'Sem mensagem adicional';
 
   const whatsappNumber = '5521993925778';
-  const message = `👋 *Nova Lead BLP Gerencial*\\n\\n` +
-    `*Nome:* ${nome}\\n` +
-    `*Empresa:* ${empresa}\\n` +
-    `*WhatsApp:* ${telefone}\\n\\n` +
-    `*Mensagem:*\\n${mensagem}`;
+  const message = `Olá time BLP, eu me chamo ${nome}, sou proprietário(a) da empresa ${empresa}. ${mensagem}. E gostaria de receber um diagnóstico!`;
 
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
