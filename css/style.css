@@ -1093,6 +1093,13 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 
   .step-item {
     padding: 1.5rem 1rem;
@@ -1134,6 +1141,10 @@ h3 {
     font-size: 1.6rem !important;
   }
 
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
   .cta-final p {
     font-size: 1rem;
